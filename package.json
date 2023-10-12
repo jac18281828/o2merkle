@@ -10,12 +10,13 @@
         "test": "test"
     },
     "scripts": {
-        "build": "forge build --sizes",
+        "build": "tsc && forge build",
         "prettier:check": "prettier --check \"(contracts|test)/**.sol\"",
         "prettier:fix": "prettier --write \"(contracts|test)/**.sol\"",
         "lint": "solhint contracts/**/*.sol test/**/*.sol",
         "test": "~mr/.cargo/bin/forge test -vvv",
-        "clean": "forge clean && forge cache clean"
+        "clean": "forge clean && forge cache clean",
+        "submit_proof": "node dist/submit_proof.js"
     },
     "repository": {
         "type": "git",
@@ -25,6 +26,10 @@
         "solhint": "3.6.2"
     },
     "dependencies": {
+        "@eth-optimism/sdk": "3.1.4",
+        "@types/node": "14.14.31",
+        "ethers": "5.5.4",
+        "typescript": "4.2.3",
         "prettier": "3.0.3",
         "prettier-plugin-solidity": "1.1.3"
     },

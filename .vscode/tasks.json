@@ -88,6 +88,32 @@
                 "kind": "test",
                 "isDefault": false
             }
+        },
+        {
+            "label": "deployl1",
+            "type": "shell",
+            "command": "forge create contracts/Counter.sol:Counter --rpc-url ${GOERLI_URL} --private-key ${PRIVATE_KEY} --etherscan-api-key ${ETHERSCAN_API_KEY} --verify",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "test",
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "deployl2",
+            "type": "shell",
+            "command": "forge create contracts/CounterL2.sol:CounterL2 --rpc-url ${OPG_URL} --private-key ${PRIVATE_KEY}",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "test",
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            }
         }
     ]
 }
